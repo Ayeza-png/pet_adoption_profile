@@ -2,58 +2,124 @@
 <!--Roll number: 26i_3280-->
 
 <!DOCTYPE html>
-<html>
-    <head>
-        
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Adopt me</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt Me | Home</title>
+    <!-- Importing a cute, rounded Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style(2).css">
+</head>
+<body>
 
-        <p>your new best friend is just a wag away</p>
+    <!-- Navigation Bar for your 3-page website -->
+    <nav class="navbar">
+        <div class="logo">🐾 Adopt Me</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="pets.html">Our Pets</a></li>
+            <li><a href="adopt.html">How to Adopt / Contact</a></li>
+        </ul>
+    </nav>
 
-        <h2>Pets available:</h2>
+    <!-- Cute & Bubbly Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Adopt Me 🐶🐱</h1>
+            <p class="tagline">Your new best friend is just a wag away!</p>
+            <p class="subtext">Giving loving paws a forever home in Islamabad and beyond.</p>
+            <div class="hero-buttons">
+                <a href="pets.html" class="btn btn-primary">Meet Our Pets</a>
+                <button onclick="showFunFact()" class="btn btn-secondary">✨ Daily Pet Fact</button>
+            </div>
+            <!-- Interactive JS output box -->
+            <p id="fact-display" class="fact-box"></p>
+        </div>
+    </header>
 
-        <img src="image.png">
-         <button onclick="adoptPet()"></button>
-        <img src="image copy.png">
-         <button onclick="adoptPet()"></button>
-        <img src="image copy 2.png">
-        <button onclick="adoptPet()"></button>
-        <img src="image copy 3.png">
-        <button onclick="adoptPet()"></button>
-        
-       
+    <!-- Featured Pets Preview Section -->
+    <section class="featured-section">
+        <h2>Featured Cuties Waiting for You</h2>
+        <p>Click on any cutie to express interest, or visit the <strong>Our Pets</strong> page to see everyone!</p>
 
-        <script>
-            function adoptPet(){
-                console.log("woohoo")
-                alert("Thank you for your interest!")
-            }
-        </script>
+        <div class="pet-grid">
+            <div class="pet-card">
+                <img src="image.png" alt="Cute Pet 1">
+                <h3>Bella</h3>
+                <p>Playful & Sweet</p>
+                <button class="adopt-btn" onclick="adoptPet('Bella')">Adopt Me! 💖</button>
+            </div>
 
-        <h2>Adoption details:</h2>
-        <table>
-            <tr>
-                <th>Full name</th>
-                <td>Ayeza Umar</td>
-            </tr>
+            <div class="pet-card">
+                <img src="image copy.png" alt="Cute Pet 2">
+                <h3>Milo</h3>
+                <p>Cuddle Expert</p>
+                <button class="adopt-btn" onclick="adoptPet('Milo')">Adopt Me! 💖</button>
+            </div>
 
-            <tr>
-                <th>Phone Number</th>
-                <td>0347 0873716</td>
-            </tr>
+            <div class="pet-card">
+                <img src="image copy 2.png" alt="Cute Pet 3">
+                <h3>Coco</h3>
+                <p>Full of Energy</p>
+                <button class="adopt-btn" onclick="adoptPet('Coco')">Adopt Me! 💖</button>
+            </div>
 
-            <tr>
-                <th>Email</th>
-                <td>aizaumar09@gmail.com</td>
-            </tr>
+            <div class="pet-card">
+                <img src="image copy 3.png" alt="Cute Pet 4">
+                <h3>Oreo</h3>
+                <p>Gentle Soul</p>
+                <button class="adopt-btn" onclick="adoptPet('Oreo')">Adopt Me! 💖</button>
+            </div>
+        </div>
+    </section>
 
-            <tr>
-                <th>City/Area</th>
-                <td>Islamabad</td>
-            </tr>
+    <!-- Why Adopt Section -->
+    <section class="why-adopt">
+        <h2>Why Adopt From Us?</h2>
+        <div class="perks-container">
+            <div class="perk-bubble">
+                <h3>🩺 Vet Checked</h3>
+                <p>All our furry friends are vaccinated, healthy, and ready for hugs.</p>
+            </div>
+            <div class="perk-bubble">
+                <h3>🏡 Loving Care</h3>
+                <p>Raised in a warm, social environment so they adjust easily to your home.</p>
+            </div>
+            <div class="perk-bubble">
+                <h3>💕 Lifetime Support</h3>
+                <p>We guide you through every step of your new pet parenting journey.</p>
+            </div>
+        </div>
+    </section>
 
-            
-    </body>
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ by Ayeza Umar (26i_3280) | Islamabad</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Updated version of your original function
+        function adoptPet(petName) {
+            console.log("Woohoo! Interest shown in " + petName);
+            alert("Woohoo! 🐾 Thank you for your interest in adopting " + petName + "! Head over to our 'How to Adopt' page to complete your request.");
+        }
+
+        // Extra interactive function for the Home Page
+        function showFunFact() {
+            const facts = [
+                "🐶 Dogs' nose prints are as unique as human fingerprints!",
+                "🐱 Cats spend 70% of their lives sleeping—professional nappers!",
+                "🐾 Petting a dog or cat for just 15 minutes lowers stress levels!",
+                "🐰 Happy bunnies do a joyful jump-twist in the air called a 'binky'!"
+            ];
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            const factBox = document.getElementById("fact-display");
+            factBox.innerText = randomFact;
+            factBox.style.display = "inline-block";
+        }
+    </script>
+
+</body>
 </html>

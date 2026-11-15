@@ -1,0 +1,152 @@
+<!--Name: Ayeza Umar-->
+<!--Roll number: 26i_3280-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt Me | Meet Our Pets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style(2).css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">🐾 Adopt Me</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="pets.html" class="active">Our Pets</a></li>
+            <li><a href="adopt.html">How to Adopt / Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="hero small-hero">
+        <div class="hero-content">
+            <h1>Meet Our Furry Friends 🐾</h1>
+            <p class="tagline">Every pet deserves a warm lap, a full bowl, and endless love.</p>
+            
+            <!-- Interactive JS Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="btn filter-btn active-filter" onclick="filterPets('all', this)">All Pets (4)</button>
+                <button class="btn filter-btn" onclick="filterPets('cat', this)">🐱 Cats Only</button>
+                <button class="btn filter-btn" onclick="filterPets('dog', this)">🐶 Dogs Only</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Detailed Pets Showcase -->
+    <section class="featured-section">
+        <div class="pet-grid">
+            <!-- Bella (Calico Cat) -->
+            <div class="pet-card detailed-card" data-category="cat">
+                <span class="pet-badge">🐱 Cat • 1 Year</span>
+                <img src="image.png" alt="Bella the Calico Cat">
+                <h3>Bella</h3>
+                <p class="pet-breed">Calico • Female • Vaccinated</p>
+                <p class="pet-bio">Bella is a curious, affectionate calico who loves sunny windowsills, head scratches, and chasing feather toys.</p>
+                <button class="adopt-btn" onclick="adoptPet('Bella')">Adopt Bella! 💖</button>
+            </div>
+
+            <!-- Milo (Husky Puppy) -->
+            <div class="pet-card detailed-card" data-category="dog">
+                <span class="pet-badge">🐶 Dog • 5 Months</span>
+                <img src="image copy.png" alt="Milo the Husky Puppy">
+                <h3>Milo</h3>
+                <p class="pet-breed">Siberian Husky • Male • Vaccinated</p>
+                <p class="pet-bio">With his striking blue eyes, Milo is a playful bundle of joy who loves outdoor walks and belly rubs.</p>
+                <button class="adopt-btn" onclick="adoptPet('Milo')">Adopt Milo! 💖</button>
+            </div>
+
+            <!-- Coco (Fluffy Ragdoll/Himalayan Cat) -->
+            <div class="pet-card detailed-card" data-category="cat">
+                <span class="pet-badge">🐱 Cat • 2 Years</span>
+                <img src="image copy 2.png" alt="Coco the Fluffy Cat">
+                <h3>Coco</h3>
+                <p class="pet-breed">Ragdoll Mix • Female • Vaccinated</p>
+                <p class="pet-bio">Coco is a calm, cloud-like sweetheart who enjoys quiet afternoons, gentle brushing, and cozy naps.</p>
+                <button class="adopt-btn" onclick="adoptPet('Coco')">Adopt Coco! 💖</button>
+            </div>
+
+            <!-- Oreo (German Shepherd) -->
+            <div class="pet-card detailed-card" data-category="dog">
+                <span class="pet-badge">🐶 Dog • 1.5 Years</span>
+                <img src="image copy 3.png" alt="Oreo the German Shepherd">
+                <h3>Oreo</h3>
+                <p class="pet-breed">German Shepherd • Male • Vaccinated</p>
+                <p class="pet-bio">Loyal, smart, and gentle, Oreo is well-mannered and eager to be your most faithful companion.</p>
+                <button class="adopt-btn" onclick="adoptPet('Oreo')">Adopt Oreo! 💖</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adoption Information & Necessary Guidelines -->
+    <section class="guidelines-section">
+        <h2>📋 Adoption Information & Guidelines</h2>
+        <p class="subtext">Before bringing a new best friend home, please review our simple care requirements:</p>
+
+        <div class="guidelines-grid">
+            <div class="guideline-card">
+                <h3>1. Safe & Loving Home</h3>
+                <p>Adopters must provide a clean, secure indoor space protected from extreme weather and busy roads.</p>
+            </div>
+
+            <div class="guideline-card">
+                <h3>2. Age & Family Consent</h3>
+                <p>Primary adopters must be <strong>18+ years old</strong>, and everyone in the household must agree to welcoming a pet.</p>
+            </div>
+
+            <div class="guideline-card">
+                <h3>3. Nutrition & Vet Care</h3>
+                <p>Commitment to daily nutritious meals, fresh water, annual vaccinations, and routine veterinary check-ups.</p>
+            </div>
+
+            <div class="guideline-card">
+                <h3>4. No Abandonment Policy</h3>
+                <p>Pets are a lifetime commitment. If circumstances ever change, you must contact us so we can safely rehome them.</p>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>Ready to give one of these cuties a forever home?</h3>
+            <a href="adopt.html" class="btn btn-primary">Go to Adoption Form ➔</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ by Ayeza Umar (26i_3280) | Islamabad</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function adoptPet(petName) {
+            console.log("Interest shown in " + petName);
+            alert("Yay! 🐾 You selected " + petName + "! Click OK to go to the Adoption & Contact page to submit your details.");
+            window.location.href = "adopt.html";
+        }
+
+        // Filter pets by category (All, Cat, Dog)
+        function filterPets(category, clickedBtn) {
+            const cards = document.querySelectorAll('.detailed-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button styling
+            buttons.forEach(btn => btn.classList.remove('active-filter'));
+            clickedBtn.classList.add('active-filter');
+
+            // Show/hide matching pet cards
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

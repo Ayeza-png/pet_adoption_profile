@@ -148,6 +148,44 @@
 
     </section>
 
+    <!-- Feedback Section -->
+    <section class="feedback-section">
+        <div class="feedback-card">
+            <h2>💬 Share Your Feedback</h2>
+            <p class="form-subtext">Loved browsing our cuties or have suggestions to make Adopt Me even better? Let us know!</p>
+
+            <form id="feedbackForm" onsubmit="submitFeedback(event)">
+                <div class="feedback-row">
+                    <div class="input-group">
+                        <label for="fbName">Your Name *</label>
+                        <input type="text" id="fbName" placeholder="e.g. Ali Raza" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="fbRating">How Cute Was Your Experience? *</label>
+                        <select id="fbRating" required>
+                            <option value="5 Paw-some Stars 🐾🐾🐾🐾🐾">⭐⭐⭐⭐⭐ (5/5 - Paw-some!)</option>
+                            <option value="4 Great Stars 🐾🐾🐾🐾">⭐⭐⭐⭐ (4/5 - Super Cute!)</option>
+                            <option value="3 Good Stars 🐾🐾🐾">⭐⭐⭐ (3/5 - Good)</option>
+                            <option value="2 Okay Stars 🐾🐾">⭐⭐ (2/5 - Needs Improvement)</option>
+                            <option value="1 Star 🐾">⭐ (1/5 - Poor)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="fbComment">Your Comments or Suggestions *</label>
+                    <textarea id="fbComment" rows="3" placeholder="Write your feedback here..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-secondary feedback-submit-btn">Submit Feedback ✨</button>
+            </form>
+
+            <!-- Live Feedback Display Box -->
+            <div id="feedbackDisplay" class="feedback-display"></div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <p>Made with ❤️ by Ayeza Umar (26i_3280) | Islamabad</p>
@@ -174,6 +212,27 @@
 
             // Reset the form fields
             document.getElementById("adoptionForm").reset();
+
+            function submitFeedback(event) {
+            event.preventDefault(); // Prevents page reload
+
+            const fbName = document.getElementById("fbName").value;
+            const fbRating = document.getElementById("fbRating").value;
+            const fbComment = document.getElementById("fbComment").value;
+
+            console.log("Feedback received from:", fbName, fbRating);
+
+            const displayBox = document.getElementById("feedbackDisplay");
+            displayBox.innerHTML = `
+                <h3>💖 Thank You for Your Feedback, ${fbName}!</h3>
+                <p><strong>Your Rating:</strong> ${fbRating}</p>
+                <p class="quoted-feedback">"${fbComment}"</p>
+            `;
+            displayBox.style.display = "block";
+
+            // Clear the feedback form
+            document.getElementById("feedbackForm").reset();
+        }
         }
     </script>
 

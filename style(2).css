@@ -517,3 +517,73 @@ footer {
 .extra-guidelines li {
     margin-bottom: 6px;
 }
+
+/* --- Feedback Form Section --- */
+
+.feedback-section {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.feedback-card {
+    background-color: #fff5f8;
+    border: 2px dashed #ff85a2;
+    border-radius: 30px;
+    padding: 35px;
+    box-shadow: 0 8px 22px rgba(107, 25, 25, 0.08);
+    text-align: left;
+}
+
+.feedback-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.feedback-card .form-subtext {
+    text-align: center;
+}
+
+.feedback-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feedback-row .input-group {
+    flex: 1;
+    min-width: 240px;
+}
+
+.feedback-submit-btn {
+    background-color: #ff85a2;
+    color: #ffffff;
+    width: 100%;
+    font-size: 1.05rem;
+    margin-top: 5px;
+}
+
+.feedback-submit-btn:hover {
+    background-color: #ff5c8a;
+}
+
+.feedback-display {
+    display: none;
+    margin-top: 22px;
+    background-color: #ffffff;
+    border: 2px solid #ffc2d1;
+    border-radius: 22px;
+    padding: 20px;
+    text-align: center;
+}
+
+.feedback-display h3 {
+    margin-bottom: 6px;
+}
+
+.quoted-feedback {
+    font-style: italic;
+    color: #7a4b4b;
+    margin-top: 8px;
+}

@@ -1,0 +1,31 @@
+/*Name: Ayeza Umar*/
+/*Roll number: 26i_3280*/
+
+body {
+    background-color:pink;
+
+}
+
+h1{
+    color: rgb(107, 25, 25);
+    padding: 8px;
+}
+
+h2{
+     color: rgb(107, 25, 25);
+}
+
+table{
+    width: 70%;
+}
+
+th,td{
+    border: 1px solid black;
+    padding: 2px;
+}
+
+img{
+    border: 1px solid black;
+    height: 250px;
+    width: 200px;
+}
